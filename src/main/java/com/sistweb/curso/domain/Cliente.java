@@ -15,6 +15,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sistweb.curso.domain.enums.TipoCliente;
@@ -28,7 +29,7 @@ public class Cliente implements Serializable {
 	private Integer id;
 	private String nome;
 	
-	@Column(unique=true)
+	@Column(name = "email", unique = true, nullable = false, length = 100)
 	private String email;
 	
 	private String cpfOuCnpj;
